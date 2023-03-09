@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import './Navbar.css';
+import './Navbar.scss';
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);

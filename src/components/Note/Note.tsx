@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { createContext, useContext, useEffect, useState } from "react";
-import "./Note.css";
+import "./Note.scss";
 
 interface Note {
   id: string;
