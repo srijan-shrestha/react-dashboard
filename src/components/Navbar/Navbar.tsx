@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import './Navbar.scss';
 import {
   logout
@@ -8,6 +9,8 @@ import {
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
   const [activeNav, setActiveNav] = useState('home');
+  const navigate = useNavigate();
+
   return (
     <nav className="w-full bg-bieze shadow">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -67,7 +70,7 @@ const Navbar = () => {
               <li className={`${activeNav === 'signup' ? 'active': '' }`} onClick={() => setActiveNav('signup')}>
                 <Link to={'/signup'}> Signup </Link>
               </li>
-              <li className={`${activeNav === 'signup' ? 'active': '' }`} onClick={() => logout()}>
+              <li  onClick={() => {logout(); navigate("login")}}>
                 Logout 
               </li>
             </ul>

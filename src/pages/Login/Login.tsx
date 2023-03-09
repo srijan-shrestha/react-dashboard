@@ -22,8 +22,9 @@ const Login = () => {
     if (user) navigate("/");
   }, [user, loading]);
   return (
-    <div className="h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col text-center p-8">
+    <section className="h-screen w-screen flex justify-center items-center">
+      <div className="flex flex-col text-center p-8 shadow-lg">
+        <h4 className="mb-8"> Login </h4>
         <input
           type="text"
           className="p-3 mb-3"
@@ -33,28 +34,25 @@ const Login = () => {
         />
         <input
           type="password"
-          className="p-4 mb-4"
+          className="p-3 mb-3"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
         />
         <button
-          className="p-4 mb-4"
+          className="p-4 mb-4 button"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+        {/* <button className="login__btn login__google" onClick={signInWithGoogle}>
           Login with Google
-        </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/signup">Signup</Link> now.
+        </button> */}
+        <div className="text-sm">
+          Don't have an account? <Link className="hover:underline" to="/signup">Signup</Link> now.
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Login;
