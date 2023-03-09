@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.scss';
+import {
+  logout
+} from "../../firebase";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -58,20 +61,14 @@ const Navbar = () => {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className={`${activeNav === 'home' ? 'active': '' }`} onClick={() => setActiveNav('home')}>
-                <Link to={'/'}> Home </Link>
+              <li className={`${activeNav === 'login' ? 'active': '' }`} onClick={() => setActiveNav('login')}>
+                <Link to={'/login'}> Login </Link>
               </li>
-              <li className={`${activeNav === 'service' ? 'active': '' }`} onClick={() => setActiveNav('service')}>
-                <Link to={'/service'}> Service </Link>
-
+              <li className={`${activeNav === 'signup' ? 'active': '' }`} onClick={() => setActiveNav('signup')}>
+                <Link to={'/signup'}> Signup </Link>
               </li>
-              <li className={`${activeNav === 'tools' ? 'active': '' }`} onClick={() => setActiveNav('tools')}>
-                <Link to={'/tools'}> Tools </Link>
-
-              </li>
-              <li className={`${activeNav === 'about' ? 'active': '' }`} onClick={() => setActiveNav('about')}>
-                <Link to={'/about'}> About </Link>
-
+              <li className={`${activeNav === 'signup' ? 'active': '' }`} onClick={() => logout()}>
+                Logout 
               </li>
             </ul>
           </div>

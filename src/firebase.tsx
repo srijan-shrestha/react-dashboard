@@ -5,7 +5,6 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
 import {
@@ -82,6 +81,7 @@ const registerWithEmailAndPassword = async (
 };
 
 const logout = () => {
+    console.log('logout')
   signOut(auth);
 };
 
