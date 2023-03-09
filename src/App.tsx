@@ -6,6 +6,7 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Note from "./components/Note/Note";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Calculator from "./components/Calculator/Calculator";
 
 function App() {
   return (
@@ -13,8 +14,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />}>
+            <Route path="/dashboard" element={<Dashboard />}/>
+            <Route path="/note" element={<Note />}/>
+            <Route path="/Calculator" element={<Calculator />}/>
+          </Route>
           <Route path="/signup" element={<Signup />} />
         </Routes>
         <Note />
