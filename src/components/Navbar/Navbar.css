@@ -1,0 +1,6 @@
+.active {
+    font-weight: bold;
+    outline: 1px solid #393E46;
+    padding: 8px;
+    border-radius: 10px;
+}
