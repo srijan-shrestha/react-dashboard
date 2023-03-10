@@ -38,11 +38,11 @@ const Movie = () => {
 
   return (
     <section className="">
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-auto">
         <div className="overflow-x-auto">
           <div className="p-1.5 w-full inline-block align-middle">
-            <div className="overflow-hidden border rounded-lg">
-              <table className="min-w-full divide-y divide-gray-200">
+            <div className=" border rounded-lg">
+              <table className="min-w-full divide-y divide-gray-200 overflow-auto">
                 <thead className="bg-gray-50">
                   <tr>
                     <th
