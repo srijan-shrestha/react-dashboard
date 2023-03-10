@@ -1,13 +1,14 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../firebase";
-import { User } from "../../Models/User";
+import { db } from "../../../firebase";
+import { User } from "../../../Models/User";
 
 const UserList = () => {
+  //  hook to set user data
   const [users, setUsers] = useState<Array<User>>([]);
 
+  // function to call on page load
   useEffect(() => {
-    // function to call on page load
     getUserList();
   }, []);
 
@@ -60,7 +61,7 @@ const UserList = () => {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {users.map((user: User) => (
-                    <tr key={user.uid}>
+                    <tr className="hover:bg-blue-50" key={user.uid}>
                       <td className="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap">
                         {user.uid}
                       </td>

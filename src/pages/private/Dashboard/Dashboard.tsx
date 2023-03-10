@@ -2,12 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { rapiAPIKey, weatherApiKey } from "../../../config";
 import "./Dashboard.scss";
-import UserList from "../../../components/UerList/UserList";
-import Calculator from "../../../components/Calculator/Calculator";
-import Note from "../../../components/Note/Note";
+import UserList from "../UerList/UserList";
+import Calculator from "../Calculator/Calculator";
+import Note from "../Note/Note";
 import { useNavigate } from "react-router-dom";
 import { MovieModel } from "../../../Models/MovieModel";
-import Weather from "../../../components/Weather/Weather";
+import Weather from "../Weather/Weather";
+import Player from "../Player/Player";
 
 const Dashboard = () => {
   // retrieve stored user from local stirage
@@ -48,24 +49,28 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="flex">
+    <section className="grid grid-cols-1 md:grid-cols-2 ">
       {/* Weather Widget*/}
-      <Weather />
+      <div
+        onClick={() => navigate("/weather")}
+      >
+        <Weather />
+      </div>
 
       {/* Top Rated Movie Info Widget*/}
       <div
         onClick={() => navigate("/movie")}
-        className="shadow-md flex flex-col justify-center items-center p-4 m-3"
+        className="shadow-md flex flex-col justify-center items-center p-4 m-3 border-green cursor-pointer hover:bg-blue-50 border-green"
       >
         <h2>Top Movie</h2>
+        <img className="object-cover h-16 w-16" src={movies[0]?.img} alt="movie"></img>
         <p className="my-1">Rank: {movies[0]?.rank}</p>
         <p className="my-1">{movies[0]?.title}</p>
         <p className="my-1">{movies[0]?.release}</p>
-        <img src={movies[0]?.img} alt="movie"></img>
       </div>
 
       {/* Login User Info Widget*/}
-      <div className="shadow-md flex flex-col justify-center items-center p-4 m-3">
+      <div className="shadow-md flex flex-col justify-center items-center p-4 m-3 cursor-pointer hover:bg-blue-50 border-green">
         <h2>Login Uer</h2>
         <p className="my-1">Email: {user?.email}</p>
         <p className="my-1">Verified: {user?.emailVerified ? "Yes" : "NO"}</p>
@@ -73,18 +78,23 @@ const Dashboard = () => {
       </div>
 
       {/* User List Wdiget */}
-      <div onClick={() => navigate("/users")}>
+      <div className="shadow-md p-4 m-3 cursor-pointer hover:bg-blue-50 border-green overflow-auto" onClick={() => navigate("/users")}>
         <UserList />
       </div>
 
-      {/* Movie Wdiget  */}
-      <div></div>
-
       {/* Note */}
-      <Note />
+      <div className="shadow-md p-4 m-3 cursor-pointer hover:bg-blue-50 border-green">
+        <Note />
+      </div>
+
+      <div className="">
+        <Player />
+      </div>
 
       {/* Calculator */}
-      <Calculator />
+      <div className="shadow-md p-4 m-3 cursor-pointer hover:bg-blue-50 border-green">
+        <Calculator />
+      </div>
     </section>
   );
 };

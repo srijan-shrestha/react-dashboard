@@ -47,5 +47,25 @@ a {
   color: $primary-color;
 }
 
+h2{
+  color: $primary-color;
+  text-transform: capitalize;
+  font-size: larger;
+  font-weight: 600;
+  // border-bottom: 1px solid $powder-blue-color;
+  @apply my-3;
+}
+
+.bg-green {
+  background-color: $primary-color;
+  color: white;
+}
+
+.border-green {
+  &:hover {
+    border: 1px solid $primary-color;
+  }
+}
+
 
 

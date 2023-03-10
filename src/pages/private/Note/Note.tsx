@@ -45,10 +45,10 @@ const Note = () => {
   return (
     <div>
       {/* <h2>Notes</h2> */}
-      <div className="bg-bieze">
+      <div className="bg-secondary">
         <div className="max-w-2xl mx-auto py-8 p-4">
           <h2 className="text-3xl font-bold mb-8">Notes</h2>
-          <div className="bg-white p-4 rounded-lg shadow-lg mb-8">
+          <div className=" p-4 rounded-lg shadow-lg mb-8">
             <input
               type="text"
               value={inputValue}
@@ -58,7 +58,7 @@ const Note = () => {
             />
             <button
               onClick={handleAddNote}
-              className="bg-bieze text-white px-4 py-2 rounded mt-2"
+              className="bg-green text-white px-4 py-2 rounded mt-2"
             >
               Add Note
             </button>
@@ -67,7 +67,7 @@ const Note = () => {
             {notes.map((note) => (
               <li
                 key={note.id}
-                className="bg-white p-4 rounded-lg shadow-lg mb-2"
+                className=" p-4 rounded-lg shadow-lg mb-2"
               >
                 <p className="text-lg">{note.content}</p>
                 <button

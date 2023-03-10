@@ -23,13 +23,13 @@ const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
     setOpen(false);
   });
   return (
-    <div className="sidebar w-18 md:w-64 shadow h-screen ">
+    <div className="sidebar md:sticky top-0  w-18 md:w-64 shadow h-screen divide-y">
       <Link to={"/dashboard"}>
         <h2 className="m-4 text-lg text-center ">React App</h2>
       </Link>
-      <nav className="md:sticky top-0 md:top-16">
+      <nav className="">
         {/* nav items */}
-        <ul className="py-2 flex flex-col gap-2 ">
+        <ul className="py-2 flex flex-col gap-2">
           {navItems.map((item, index) => {
             return (
               <Link

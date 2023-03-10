@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { rapiAPIKey } from "../../config";
+import { rapiAPIKey } from "../../../config";
 
 const Weather = () => {
   const [weather, setWeather] = useState<any>(null);
@@ -25,12 +25,13 @@ const Weather = () => {
     const getWeather =() => {
       axios.request(weatherOptions).then(function (response) {
         console.log(response.data);
+        setWeather(response.data);
       }).catch(function (error) {
         console.error(error);
       });
     }
   return    <div
-  className="shadow-md flex flex-col justify-center items-center p-4 m-3"
+  className="shadow-md border-green cursor-pointer hover:bg-blue-50 flex flex-col justify-center items-center p-4 m-3"
 >
   <h2>Weather</h2>
   <p className="my-1">Temperature: {weather?.current?.temp_c} °C / {weather?.current?.temp_f} °F</p>

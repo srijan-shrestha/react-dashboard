@@ -20,7 +20,7 @@ export const defaultNavItems: NavItem[] = [
   },
   {
     label: "Weather",
-    href: "/dashboard",
+    href: "/weather",
     icon: <SunIcon className="w-6 h-6" />,
   },
   {
