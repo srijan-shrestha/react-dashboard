@@ -19,6 +19,8 @@ type Props = {
 };
 const Sidebar = ({ open, navItems = defaultNavItems, setOpen }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
+
+  // function to habdle the click event outside of the sidebar
   useOnClickOutside(ref, (e) => {
     setOpen(false);
   });

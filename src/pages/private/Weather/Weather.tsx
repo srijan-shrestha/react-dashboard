@@ -5,6 +5,7 @@ import { rapiAPIKey } from "../../../config";
 const Weather = () => {
   const [weather, setWeather] = useState<any>(null);
 
+  // hook to trigger funtion on component load
   useEffect(() => {
     // function to call on page load
     getWeather();

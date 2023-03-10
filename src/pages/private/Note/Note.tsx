@@ -16,28 +16,36 @@ export const NotesContext = createContext<{
 });
 
 const Note = () => {
+  // hook to set notes
   const [notes, setNotes] = useState<Note[]>([]);
+  
+  // hook to set input value
   const [inputValue, setInputValue] = useState("");
 
+   // hook to get notes on component load
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("notes") || "[]");
     setNotes(savedNotes);
   }, []);
 
+   // hook to save notes
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
+  // function to handle input field change event
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
+  // function to handle not add button click event
   const handleAddNote = () => {
     const newNote: Note = { id: nanoid(), content: inputValue };
     setNotes([...notes, newNote]);
     setInputValue("");
   };
 
+   // function to handle not delete button click event
   const handleDeleteNote = (id: string) => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     setNotes(filteredNotes);
@@ -89,6 +97,8 @@ const Note = () => {
   }
 
   function NoteList({ handleDeleteNote }: NoteListProps) {
+
+    // hook to retrieve stored notes
     const { notes, setNotes } = useContext(NotesContext);
 
     return (

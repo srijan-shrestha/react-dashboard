@@ -6,12 +6,13 @@ import { MovieModel } from "../../../Models/MovieModel";
 const Movie = () => {
   const [movies, setMovies] = useState<Array<MovieModel>>([]);
 
+  // hook to trigger function on component load
   useEffect(() => {
     // function to call on page load
     topMovies();
   }, []);
 
-
+  // configuration for movie API call
   const options = {
     method: "GET",
     url: "https://imdb-charts.p.rapidapi.com/charts",
@@ -21,11 +22,13 @@ const Movie = () => {
       "X-RapidAPI-Host": "imdb-charts.p.rapidapi.com",
     },
   };
+
+  // function to call movie API
   const topMovies = () => {
     axios
       .request(options)
       .then(function (response) {
-        console.log('movies',  response.data);
+        console.log("movies", response.data);
         setMovies(response.data.results);
       })
       .catch(function (error) {
@@ -33,8 +36,9 @@ const Movie = () => {
       });
   };
 
-  return <section className="">
-  <div className="flex flex-col">
+  return (
+    <section className="">
+      <div className="flex flex-col">
         <div className="overflow-x-auto">
           <div className="p-1.5 w-full inline-block align-middle">
             <div className="overflow-hidden border rounded-lg">
@@ -81,7 +85,8 @@ const Movie = () => {
           </div>
         </div>
       </div>
-  </section>;
+    </section>
+  );
 };
 
 export default Movie;

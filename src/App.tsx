@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
 import Login from "./pages/public/Login/Login";
 import Signup from "./pages/public/Signup/Signup";
-import Note from "./pages/private/Note/Note";
+
 import Dashboard from "./pages/private/Dashboard/Dashboard";
 import Calculator from "./pages/private/Calculator/Calculator";
-import Layout from "./components/Layout/Layout";
+
 import Sidebar from "./components/Sidebar/Sidebar";
 import "./App.scss";
 import UserList from "./pages/private/UerList/UserList";
@@ -19,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* <Navbar onMenuButtonClick={() => setSidebarOpen((prev) => !prev)} /> */}
 
         <div className="flex layout">
           <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />

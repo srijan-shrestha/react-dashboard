@@ -11,18 +11,24 @@ import "./Login.scss";
 import { json } from "stream/consumers";
 
 const Login = () => {
+  // hook to set email
   const [email, setEmail] = useState("");
+  // hook to set email
   const [password, setPassword] = useState("");
+
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
+  // hook to set loading screen and set user data in local storage
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return;
     }
     if (user) {
-      navigate('/dashboard');
-      localStorage.setItem('user', JSON.stringify(user));
+      navigate("/dashboard");
+      localStorage.setItem("user", JSON.stringify(user));
     }
   }, [user, loading]);
   return (
@@ -53,7 +59,11 @@ const Login = () => {
           Login with Google
         </button> */}
         <div className="text-sm">
-          Don't have an account? <Link className="hover:underline" to="/signup">Signup</Link> now.
+          Don't have an account?{" "}
+          <Link className="hover:underline" to="/signup">
+            Signup
+          </Link>{" "}
+          now.
         </div>
       </div>
     </section>

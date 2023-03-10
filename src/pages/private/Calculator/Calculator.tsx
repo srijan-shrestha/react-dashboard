@@ -6,6 +6,7 @@ const Calculator = () => {
   const [prevValue, setPrevValue] = useState("");
   const [operator, setOperator] = useState("");
 
+  // function to hanlde number click event
   const handleNumberClick = (num: string) => {
     // logic for handling number input
     if (value === "0") {
@@ -15,6 +16,7 @@ const Calculator = () => {
     }
   };
 
+  // function to hanlde operator click event
   const handleOperatorClick = (op: string) => {
     // logic for handling operator input
     setPrevValue(value);
@@ -22,6 +24,7 @@ const Calculator = () => {
     setOperator(op);
   };
 
+  // function to hanlde equal click event
   const handleEqualClick = () => {
     // logic for handling equal button click
     let result;
@@ -46,6 +49,7 @@ const Calculator = () => {
     setOperator("");
   };
 
+  // function to hanlde clear click event
   const handleClearClick = () => {
     // logic for handling clear button click
     setValue("0");
