@@ -4,10 +4,11 @@ import {
   auth,
   logInWithEmailAndPassword,
   signInWithGoogle,
-} from "../../firebase";
+} from "../../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import "./Login.scss";
+import { json } from "stream/consumers";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +20,10 @@ const Login = () => {
       // maybe trigger a loading screen
       return;
     }
-    if (user) navigate("/");
+    if (user) {
+      navigate('/dashboard');
+      localStorage.setItem('user', JSON.stringify(user));
+    }
   }, [user, loading]);
   return (
     <section className="h-screen w-screen flex justify-center items-center">

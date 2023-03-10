@@ -15,7 +15,6 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD9kcjBss2Uqd07Tl-mChfidBYjd9jEjLk",
@@ -55,6 +54,7 @@ const signInWithGoogle = async () => {
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    console.log(db)
   } catch (err) {
     console.error(err);
     alert(err);
@@ -86,6 +86,8 @@ const logout = () => {
   signOut(auth);
 //   navigate("login");
 };
+
+
 
 export {
   auth,
