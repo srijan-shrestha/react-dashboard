@@ -7,51 +7,52 @@
   border: 2px solid $primary-color;
   border-radius: 8px;
   overflow: hidden;
+
+  .display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 80px;
+    padding: 0 16px;
+    font-size: 36px;
+    /* background-color: #eee; */
+  }
+  
+  .row {
+    display: flex;
+    height: 80px;
+  }
+  
+  .button {
+    flex: 1;
+    font-size: 24px;
+    border: none;
+    background-color: #fff;
+    color: $primary-color;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .button:hover {
+    background-color: $powder-blue-color;
+  }
+  
+  .button-clear {
+    color: #f00;
+  }
+  
+  .button-operator {
+    color: #00f;
+    font-weight: bold;
+  }
+  
+  .button-equal {
+    background-color: #00f;
+    color: #fff;
+  }
+  
+  .button-equal:hover {
+    background-color: #004080;
+  }
 }
 
-.display {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 80px;
-  padding: 0 16px;
-  font-size: 36px;
-  /* background-color: #eee; */
-}
-
-.row {
-  display: flex;
-  height: 80px;
-}
-
-.button {
-  flex: 1;
-  font-size: 24px;
-  border: none;
-  background-color: #fff;
-  color: $primary-color;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.button:hover {
-  background-color: $powder-blue-color;
-}
-
-.button-clear {
-  color: #f00;
-}
-
-.button-operator {
-  color: #00f;
-  font-weight: bold;
-}
-
-.button-equal {
-  background-color: #00f;
-  color: #fff;
-}
-
-.button-equal:hover {
-  background-color: #004080;
-}

@@ -25,7 +25,7 @@ const Signup = () => {
   return (
     <section className="h-screen w-screen flex justify-center items-center">
       <div className="flex flex-col text-center p-8 shadow-lg">
-        <h4 className="mb-8"> Signup </h4>
+        <h2 className="mb-8"> CREATE ACCOUNT </h2>
         <input
           type="text"
           className="p-3 mb-3"

@@ -34,7 +34,8 @@ const Login = () => {
   return (
     <section className="h-screen w-screen flex justify-center items-center">
       <div className="flex flex-col text-center p-8 shadow-lg">
-        <h4 className="mb-8"> Login </h4>
+        <h2 className="mb-8"> LOGIN</h2>
+        <p className="mb-3 text-sm text-slate-500">Please Log In to continue</p>
         <input
           type="text"
           className="p-3 mb-3"
